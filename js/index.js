@@ -37,3 +37,8 @@ function closeOnClick() {
   hamb.classList.remove("active");
   body.classList.remove("noscroll");
 }
+
+//выподающие меню
+function dropDown(e) {
+    document.getElementById(e).classList.toggle("show");
+  }

@@ -101,6 +101,31 @@ body {
   color: rgba(0, 0, 0, 1);
 }
 
+.dropdown__content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    overflow: auto;
+    margin-top: 1px;
+    width: 100%;    
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown__content div {
+    height: 100%;
+    width: auto;
+  }
+  .dropdown__content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: flex;}
+
 @media (max-width: 1000px) {
     .navbar__wrap .menu {
       display: none;
