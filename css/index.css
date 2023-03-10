@@ -1,0 +1,188 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'RF Dewi';
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.2;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  border: 0 solid #000;
+  writing-mode: horizontal-tb;
+  border-block-end-width: 1px;
+}
+
+.navbar__wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.hamb {
+  display: none;
+}
+
+.popup {
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  height: 100%;
+}
+
+.logo__button {
+    width: 162px;
+    height: 100%;
+
+    background: #fff;
+    color: #DC1919;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    box-sizing: border-box;
+    border: 1px solid #DC1919;
+    border-radius: 4px;
+}
+
+.logo__button:hover{
+    background: #dc191933;
+}
+
+.menu > li > a {
+  text-decoration: none;
+}
+
+.navbar__wrap .menu {
+  display: flex;
+}
+
+.navbar__wrap .menu > li {
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar__wrap .menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 2vw 0 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar__wrap .menu > li > a:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 1000px) {
+    .navbar__wrap .menu {
+      display: none;
+    }
+  
+    .hamb {
+      display: flex;
+      align-items: center;
+    }
+  
+    .hamb__field {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  
+    .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin: 6px auto;
+      background-color: #000;
+      transition: 0.2s;
+    }
+  
+    .popup {
+      position: fixed;
+      top: 75px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 100;
+      display: flex;
+      transition: 0.3s;
+    }
+  
+    .popup.open {
+      left: 0;
+    }
+  
+    .popup .menu {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 50px 0;
+      overflow: auto;
+    }
+  
+    .popup .menu > li {
+      width: 100%;
+    }
+  
+    .popup .menu > li > a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #3f3f3f;
+    }
+  
+    .popup .menu > li > a:hover {
+      background-color: rgba(122, 82, 179, 0.1);
+    }
+  
+    .hamb__field.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .hamb__field.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+  
+    .hamb__field.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  
+    body.noscroll {
+      overflow: hidden;
+    }
+  }
