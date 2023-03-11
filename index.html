@@ -21,7 +21,7 @@
                 <ul><img src="img/logo.svg" class="logo" id="logo"></img></ul>
                 <ul class="menu" id="menu">
                   <li>
-                      <a href="#" onclick="dropDown('catalog')" >Каталог недвижимости</a>            
+                      <a href="#" onclick="dropDown('catalog','show__flex')" >Каталог недвижимости</a>            
                   </li>
                   <li><a href="#">Ипотека</a></li>
                   <li><a href="#">О нас </a></li>
@@ -62,8 +62,56 @@
           </nav>
           <div class="popup" id="popup"></div>
     </header>
+    <main>
+      <div class="real__estate__filters">
+        <span class="main__heading">Сотрудничество начинается с доверия</span>
+        <span class="main__text">«Траст» входит в состав Российской Гильдии Риэлторов. 
+          Стандарты качества услуг компании сертифицированы, 
+          деятельность застрахована.</span>
+        <div class="dropdown__bar">
+          <div class="apartment__type">
+            <a href="#" onclick="dropDown('block__apartment__type','show__grid')" >Тип квартиры</a>
+            <div id="block__apartment__type" class="dropdown__content">
+              <input type="checkbox" id="cb1"> <label for="cb1">Квартира в новостройке</label>
+              <input type="checkbox" id="cb2"> <label for="cb2">Квартира во вторичке</label>
+              <hr>
+              <input type="checkbox" id="cb3"> <label for="cb3">Комната</label>
+              <input type="checkbox" id="cb4"> <label for="cb4">Доля</label>
+              <hr>
+              <input type="checkbox" id="cb5"> <label for="cb5">Дом или дача</label>
+              <input type="checkbox" id="cb6"> <label for="cb6">Часть дома</label>
+              <input type="checkbox" id="cb7"> <label for="cb7">Таунхаус</label>
+              <input type="checkbox" id="cb8"> <label for="cb8">Участок</label>
+            </div>
+          </div>
+          <div class="rooms"></div>
+          <div class="price__range"></div>
+          <div class="search__street">
+            <!-- <button onclick="dropDown('block__search')" class="dropbtn">Dropdown</button> -->
+            <input type="text" placeholder="Район, улица, дом или ЖК " id="search" onclick="dropDown('block__search','show__block')" onkeyup="filterSearch('search', 'block__search')">
+            <button class="btn__search">Поиск</button>
+            <div id="block__search" class="dropdown__content">
+              <span>Адрес</span>
+              <a href="#">Железнодорожников, 7, Картымский</a>
+              <a href="#">Железнодорожная, 21, Винзили1</a>
+              <a href="#">Железнодорожников, 3, Картымский</a>
+              <a href="#">Железнодорожников, 4, Картымский</a>
+              <a href="#">Железнодорожников, 6, Картымский</a>
+              <span>Район</span>
+              <a href="#">Железнодорожный</a>
+              <span>Жилой комплекс</span>
+              <a href="#">Жужа</a>
+            </div>
+          </div>
+        </div>
+        <div class="services"></div>
+      </div>
+    </main>
+    
+    <footer>
 
+    </footer>
 
     <script src="js/index.js"></script>
-  </body>
+</body>
 </html>

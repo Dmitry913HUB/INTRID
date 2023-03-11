@@ -1,3 +1,5 @@
+'use strict'
+
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
 const body = document.body;
@@ -39,6 +41,21 @@ function closeOnClick() {
 }
 
 //выподающие меню
-function dropDown(e) {
-    document.getElementById(e).classList.toggle("show");
-  }
+function dropDown(drop, visib) {
+    document.getElementById(drop).classList.toggle(visib);
+}
+
+  function filterSearch(sr, dr) {
+    let input = document.getElementById(sr);
+    let filter = input.value.toUpperCase();
+    let div = document.getElementById(dr);
+    let a = div.getElementsByTagName("a");
+    
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
