@@ -18,7 +18,7 @@
                     <span class="bar"></span>
                   </div>
                 </div>
-                <ul><img src="img/logo.svg" class="logo" id="logo"></img></ul>
+                <span><img src="img/logo.svg" class="logo" id="logo"></img></span>
                 <ul class="menu" id="menu">
                   <li>
                       <a href="#" onclick="dropDown('catalog','show__flex')" >Каталог недвижимости</a>            
@@ -63,53 +63,160 @@
           <div class="popup" id="popup"></div>
     </header>
     <main>
-      <div class="real__estate__filters">
-        <span class="main__heading">Сотрудничество начинается с доверия</span>
-        <span class="main__text">«Траст» входит в состав Российской Гильдии Риэлторов. 
-          Стандарты качества услуг компании сертифицированы, 
-          деятельность застрахована.</span>
-        <div class="dropdown__bar">
-          <div class="apartment__type">
-            <a href="#" onclick="dropDown('block__apartment__type','show__grid')" >Тип квартиры</a>
-            <div id="block__apartment__type" class="dropdown__content">
-              <input type="checkbox" id="cb1"> <label for="cb1">Квартира в новостройке</label>
-              <input type="checkbox" id="cb2"> <label for="cb2">Квартира во вторичке</label>
-              <hr>
-              <input type="checkbox" id="cb3"> <label for="cb3">Комната</label>
-              <input type="checkbox" id="cb4"> <label for="cb4">Доля</label>
-              <hr>
-              <input type="checkbox" id="cb5"> <label for="cb5">Дом или дача</label>
-              <input type="checkbox" id="cb6"> <label for="cb6">Часть дома</label>
-              <input type="checkbox" id="cb7"> <label for="cb7">Таунхаус</label>
-              <input type="checkbox" id="cb8"> <label for="cb8">Участок</label>
+      <div class="beck__img">
+        <img src="img/fon.svg">
+        <div class="real__estate__filters">
+          <div class="main__block__text">
+            <span class="main__heading">Сотрудничество начинается с доверия</span>
+            <span class="main__text">«Траст» входит в состав Российской Гильдии Риэлторов. 
+            Стандарты качества услуг компании сертифицированы, 
+            деятельность застрахована.</span>
+          </div>
+          <div class="dropdown__bar">
+            <div class="apartment__type">
+              <button href="#" onclick="dropDown('block__apartment__type','show__grid')" >Тип квартиры</button>
+              <div id="block__apartment__type" class="dropdown__content">
+                <div><p>Жилая</p><p>Комерческая</p></div>
+                <input type="checkbox" id="cb1"> <label for="cb1">Квартира в новостройке</label>
+                <input type="checkbox" id="cb2"> <label for="cb2">Квартира во вторичке</label>
+                <hr>
+                <input type="checkbox" id="cb3"> <label for="cb3">Комната</label>
+                <input type="checkbox" id="cb4"> <label for="cb4">Доля</label>
+                <hr>
+                <input type="checkbox" id="cb5"> <label for="cb5">Дом или дача</label>
+                <input type="checkbox" id="cb6"> <label for="cb6">Часть дома</label>
+                <input type="checkbox" id="cb7"> <label for="cb7">Таунхаус</label>
+                <input type="checkbox" id="cb8"> <label for="cb8">Участок</label>
+              </div>
+            </div>
+            <div class="rooms">
+              <button href="#" onclick="dropDown('block__rooms','show__grid')" >Комнатность</button>
+              <div id="block__rooms" class="dropdown__content">
+                <div class="quantity__rooms">
+                  <div><p>1</p></div>
+                  <div><p>2</p></div>
+                  <div><p>3</p></div>
+                  <div><p>4</p></div>
+                  <div><p>5+</p></div>
+                </div>
+                <input type="checkbox" id="cb9"> <label for="cb9">Студия</label>
+                <input type="checkbox" id="cb10"> <label for="cb10">Свободная планировка</label>
+              </div>
+            </div>
+            <div class="price__range">
+              <button href="#" onclick="dropDown('block__price__range','show__grid')" >Диапазон цены</button>
+              <div id="block__price__range" class="dropdown__content">
+                <div>
+                  <input placeholder="от" type="number" id="nb1"><label class="currency" for="nb1">₽</label>
+                </div>
+                <div>
+                  <input placeholder="до" type="number" id="nb2"><label class="currency" for="nb2">₽</label>
+                </div>
+              </div>
+            </div>
+            <div class="search__street">
+              <!-- <button onclick="dropDown('block__search')" class="dropbtn">Dropdown</button> -->
+              <input type="text" placeholder="Район, улица, дом или ЖК " id="search" onclick="dropDown('block__search','show__block')" onkeyup="filterSearch('search', 'block__search')">
+              <button class="btn__search">Поиск</button>
+              <div id="block__search" class="dropdown__content">
+                <span>Адрес</span>
+                <a href="#">Железнодорожников, 7, Картымский</a>
+                <a href="#">Железнодорожная, 21, Винзили1</a>
+                <a href="#">Железнодорожников, 3, Картымский</a>
+                <a href="#">Железнодорожников, 4, Картымский</a>
+                <a href="#">Железнодорожников, 6, Картымский</a>
+                <span>Район</span>
+                <a href="#">Железнодорожный</a>
+                <span>Жилой комплекс</span>
+                <a href="#">Жужа</a>
+              </div>
             </div>
           </div>
-          <div class="rooms"></div>
-          <div class="price__range"></div>
-          <div class="search__street">
-            <!-- <button onclick="dropDown('block__search')" class="dropbtn">Dropdown</button> -->
-            <input type="text" placeholder="Район, улица, дом или ЖК " id="search" onclick="dropDown('block__search','show__block')" onkeyup="filterSearch('search', 'block__search')">
-            <button class="btn__search">Поиск</button>
-            <div id="block__search" class="dropdown__content">
-              <span>Адрес</span>
-              <a href="#">Железнодорожников, 7, Картымский</a>
-              <a href="#">Железнодорожная, 21, Винзили1</a>
-              <a href="#">Железнодорожников, 3, Картымский</a>
-              <a href="#">Железнодорожников, 4, Картымский</a>
-              <a href="#">Железнодорожников, 6, Картымский</a>
-              <span>Район</span>
-              <a href="#">Железнодорожный</a>
-              <span>Жилой комплекс</span>
-              <a href="#">Жужа</a>
+          <div class="services">
+            <div class="mortgage">
+              <img src="img/mortgage.svg">
+              <div class="block__text__services">
+                <span class="h__services">Ипотека онлайн</span>
+                <span class="text__services">Поможем получить одобрение банков, чтобы вы могли</span>
+                <img src="img/Vector.svg">
+              </div>
+            </div>
+            <div class="swap">
+              <img src="img/swap.svg">
+              <div class="block__text__services">
+                <span class="h__services">Поменяем на новую</span>
+                <span class="text__services">Поможем получить одобрение банков, чтобы вы могли</span>
+                <img src="img/Vector.svg">
+              </div>
+            </div>
+            <div class="cost">
+              <img src="img/cost.svg">
+              <div class="block__text__services">
+                <span class="h__services">Оценка стоимости</span>
+                <span class="text__services">Поможем получить одобрение банков, чтобы вы могли</span>
+                <img src="img/Vector.svg">
+              </div>
             </div>
           </div>
         </div>
-        <div class="services"></div>
+      </div>
+      <div class="sloder__block">
+        <div class="intro">
+          <div>
+            <span class="excl">Эксклюзивные варианты</span>
+            <span class="excl__text">В данном случае я выступаю в роли Морфеуса — лишь указываю на дверь, войти придётся самостоятельно.</span>
+          </div>
+          <button class="logo__button">Все эксклюзивы</button>
+        </div>
+        <div class="slider">
+          <div class="item">
+              <img src="img/kitchen.svg">
+          </div>  
+          <div class="item">
+              <img src="img/kitchen2.svg">
+          </div>
+          <div class="item">
+              <img src="img/kitchen3.svg">
+          </div>
+          <a class="previous" onclick="previousSlide()">&#10094;</a>
+          <a class="next" onclick="nextSlide()">&#10095;</a>
+          <div>
+            <button class="top__slider">Кухня в подарок</button>
+            <div class="bot__text">
+              <span class="prise">13 750 000 ₽</span>
+              <span class="characteristics">3-к квартира,   57м2,   12/15 эт.</span>
+              <span class="area">Коминтерновский район, Московский проспект,114</span>
+            </div>
+            <div class="bot__btn">
+              <button class="heart"><img src="img/heart.svg" alt=""></button>
+              <button class="show__number">Показать номер</button>
+            </div>
+          </div>
+        </div>
+        <div class="fill__bar__slider">
+          <div id="fill__bar"></div>
+        </div>
       </div>
     </main>
     
     <footer>
-
+      <div class="navbar__wrap">
+        <ul><img src="img/footerLogo.svg" class="logo" id="logo"></img></ul>
+        <ul class="menu" id="menu">
+          <li><a href="#">Каталог недвижимости</a></li>
+          <li><a href="#">Ипотека</a></li>
+          <li><a href="#">О нас </a></li>
+          <li><a href="#">Карьера</a></li>
+          <li><a href="#">Отзывы</a></li>
+          <li><a href="#">Вакансии</a></li>
+          <li><a href="#">Прочее</a></li>
+          <li><button>Офисы и контакты</button></li>
+        </ul>
+      </div>
+      <div class="company">
+        <span class="left">©2000-2022 Компания «Траст». Все права защищены. При использовании материалов гиперссылка обязательна.</span>
+        <span class="rigth"><span><img src="img/vk.svg"></span></span>
+      </div>
     </footer>
 
     <script src="js/index.js"></script>

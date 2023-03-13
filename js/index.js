@@ -2,7 +2,6 @@
 
 const hamb = document.querySelector("#hamb");
 const popup = document.querySelector("#popup");
-const body = document.body;
 
 // Клонируем меню, чтобы задать свои стили для мобильной версии
 const menu = document.querySelector("#menu").cloneNode(1);
@@ -16,7 +15,6 @@ function hambHandler(e) {
   // Переключаем стили элементов при клике
   popup.classList.toggle("open");
   hamb.classList.toggle("active");
-  body.classList.toggle("noscroll");
   renderPopup();
 }
 
@@ -37,7 +35,6 @@ links.forEach((link) => {
 function closeOnClick() {
   popup.classList.remove("open");
   hamb.classList.remove("active");
-  body.classList.remove("noscroll");
 }
 
 //выподающие меню
@@ -58,4 +55,39 @@ function dropDown(drop, visib) {
             a[i].style.display = "none";
         }
     }
+}
+
+//слайдер
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+function previousSlide() {
+    showSlides(slideIndex -= 1);  
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let slides = document.getElementsByClassName("item");
+    let fillBar = document.getElementById("fill__bar");
+        
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    for (let slide of slides) {
+        slide.style.display = "none";
+    }   
+    slides[slideIndex - 1].style.display = "block"; 
+
+    fillBar.style.width = `${slideIndex / slides.length * 100}%`;
 }
