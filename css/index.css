@@ -161,6 +161,10 @@ hr{
     display: grid;
   }
 
+  .show__none{
+    display: none;
+  }
+
   #catalog{
     padding: 0 24px 0 24px;
   }

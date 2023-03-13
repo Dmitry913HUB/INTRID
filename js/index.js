@@ -38,9 +38,17 @@ function closeOnClick() {
 }
 
 //выподающие меню
+let bufer = "";
+let buferVisib = "";
 function dropDown(drop, visib) {
   //задаем видимость элементу
-    document.getElementById(drop).classList.toggle(visib);
+  if(bufer && bufer !== drop){
+    // document.getElementById(bufer).classList.toggle('.show__none');
+    document.getElementById(bufer).classList.remove(buferVisib); 
+  }
+  document.getElementById(drop).classList.toggle(visib);
+  bufer = drop;
+  buferVisib = visib;    
 }
 
 //поиск нужного района
