@@ -29,6 +29,7 @@ hr{
   width: 100%;
 }
 
+/* панель управления */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -117,6 +118,7 @@ hr{
   color: rgba(0, 0, 0, 1);
 }
 
+/* выподающие списки */
 .dropdown__content {
     display: none;
     position: absolute;
@@ -223,7 +225,7 @@ hr{
     border-left: 1px solid #ddd;
   }
 
-
+  /* стилизация чекбоксов */
   input[type="checkbox"]:checked, 
   input[type="checkbox"]:not(:checked)
   {
@@ -396,6 +398,7 @@ hr{
     font-size: 14px;
   }
 
+  /* сервис, блоки под выподающиими списками */
   .services{
     display: flex;
     flex-wrap: wrap;
@@ -625,6 +628,7 @@ hr{
     height: 6px;
   }
 
+  /* подвал */
   footer{
     background-color:#3D3D3D;
     font-weight: 400;
@@ -670,6 +674,8 @@ hr{
     width: 10%;
     text-align: right;
   }
+
+  /* адаптив */
 
   @media (min-width: 1300px) {
 

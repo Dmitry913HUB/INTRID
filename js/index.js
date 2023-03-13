@@ -39,22 +39,24 @@ function closeOnClick() {
 
 //выподающие меню
 function dropDown(drop, visib) {
+  //задаем видимость элементу
     document.getElementById(drop).classList.toggle(visib);
 }
 
-  function filterSearch(sr, dr) {
-    let input = document.getElementById(sr);
-    let filter = input.value.toUpperCase();
-    let div = document.getElementById(dr);
-    let a = div.getElementsByTagName("a");
-    
-    for (let i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
-    }
+//поиск нужного района
+function filterSearch(sr, dr) {
+  let input = document.getElementById(sr);
+  let filter = input.value.toUpperCase();
+  let div = document.getElementById(dr);
+  let a = div.getElementsByTagName("a");
+  
+  for (let i = 0; i < a.length; i++) {
+      if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+      } else {
+          a[i].style.display = "none";
+      }
+  }
 }
 
 //слайдер
