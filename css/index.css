@@ -9,6 +9,13 @@ html {
   box-sizing: inherit;
 }
 
+@font-face {
+  src: url("../fonts/RFDewi-Light.ttf") format("truetype"); 
+  font-family: 'RF Dewi';
+  font-style: normal;
+  font-size: 14px; 
+  } 
+
 body {
   flex-direction: column;
   font-family: 'RF Dewi';
@@ -426,7 +433,7 @@ hr{
 
   .block__text__services img {
     width: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
   }
 
   .cost:hover{
